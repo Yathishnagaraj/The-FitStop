@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheFitStop - Sip. Snack. Power Up.</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🏋️ TheFitStop</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Sip. Snack. Power Up.</h2>
+        <p>Your ultimate destination for healthy beverages and nutritious snacks</p>
+        <a href="#about" class="btn">Learn More</a>
+    </section>
+
+    <main class="container">
+        <section id="about">
+            <h2>About TheFitStop</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>TheFitStop is your one-stop shop for premium, health-conscious beverages and snacks. We believe that staying fit doesn't mean compromising on taste.</p>
+                    <p>Our carefully curated selection of products is designed to support your fitness journey, whether you're looking to boost energy, recover after a workout, or maintain a healthy lifestyle.</p>
+                </div>
+                <div class="about-text">
+                    <h3>Why Choose Us?</h3>
+                    <p><strong>✓ Quality Ingredients:</strong> All our products are sourced from trusted, reputable suppliers.</p>
+                    <p><strong>✓ Variety:</strong> From protein shakes to energy bars, we have something for everyone.</p>
+                    <p><strong>✓ Expert Guidance:</strong> Our team is knowledgeable and ready to help you find the perfect products for your goals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-form">
+                {% if message %}
+                    <div class="message {% if message_type == 'success' %}success{% else %}error{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endif %}
+                <form method="POST" action="/contact">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TheFitStop. All rights reserved.</p>
+        <p>Sip. Snack. Power Up. 💪</p>
+    </footer>
+</body>
+</html>
