@@ -11,7 +11,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/Yathishnagaraj/Ecommerce-App-Kastro.git'
+                git 'https://github.com/Yathishnagaraj/The-FitStop.git'
             }
         }
 
